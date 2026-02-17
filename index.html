@@ -1162,18 +1162,19 @@ document.addEventListener("DOMContentLoaded", renderGallery);
         const maxPlayers = isOnline ? data.players.max : 0;
 
         if (isOnline) {
+         statusIndicator.className =
+            'w-3 h-3 rounded-full bg-red-500 shadow-lg shadow-red-500/50';
+          statusText.textContent = ' Serveur hors ligne';
+          statusText.className = 'text-sm text-red-400 font-medium';
+          statusPlayers.textContent = '';
+          
+        } else {
           statusIndicator.className =
             'w-3 h-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50';
           statusText.textContent = ' Serveur en ligne';
           statusText.className = 'text-sm text-green-400 font-medium';
           statusPlayers.textContent = `${playerCount}/${maxPlayers} joueurs`;
           statusPlayers.className = 'text-sm text-green-300';
-        } else {
-          statusIndicator.className =
-            'w-3 h-3 rounded-full bg-red-500 shadow-lg shadow-red-500/50';
-          statusText.textContent = ' Serveur hors ligne';
-          statusText.className = 'text-sm text-red-400 font-medium';
-          statusPlayers.textContent = '';
         }
 
       } catch (error) {
@@ -1205,6 +1206,7 @@ document.addEventListener("DOMContentLoaded", renderGallery);
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c51473c921900a4',t:'MTc2OTYxMTU3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+
 
 
 
